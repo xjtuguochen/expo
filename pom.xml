@@ -16,5 +16,7 @@
   </dependencies>
   <build>
     <finalName>expo</finalName>
+      <plugins>
+      </plugins>
   </build>
 </project>
