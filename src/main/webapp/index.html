@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>AngularJS POC</title>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.js"></script>
+    <script src="js/app/mods/custom-directive.js"></script>
+</head>
+<body>
+<div id="container" ng-app="expo">
+    <div ng-controller="TestController">
+        <chart id="detailChart" chart-data="detail"></chart>
+        <chart id="overviewChart" chart-data="overview"></chart>
+    </div>
+</div>
+</body>
+</html>
