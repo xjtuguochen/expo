@@ -6,7 +6,28 @@
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
     <name>expo</name>
+    <properties>
+        <cucumber.jvm>1.1.8</cucumber.jvm>
+    </properties>
     <dependencies>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-jvm</artifactId>
+            <version>${cucumber.jvm}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-junit</artifactId>
+            <version>${cucumber.jvm}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>info.cukes</groupId>
+            <artifactId>cucumber-java</artifactId>
+            <version>${cucumber.jvm}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -46,6 +67,7 @@
                     <maxmem>512m</maxmem>
                 </configuration>
             </plugin>
+
 
             <plugin>
                 <groupId>org.flywaydb</groupId>
