@@ -1,14 +1,34 @@
 (function () {
     "user strict";
-    angular.module("expo", []).controller("TestController", ["$scope", "$interval", "$log", function ($scope, $interval, $log) {
-        $scope.detail = new DataPoint("detail");
-        $scope.overview = new DataPoint("overview");
-        var i = 0;
-        /*$interval(function () {
-            $scope.detail = new DataPoint("detail");
-            $scope.overview = new DataPoint("overview");
-            $log.debug("interval triggered " + ++i);
-        }, 300);*/
+    angular.module("expo", []).controller("TestController", ['$q', "$scope", "$interval", "$log", function ($q, $scope, $interval, $log) {
+        function asyncGreet(name) {
+            var deferred = $q.defer();
+            function okToGreet() {
+                return true;
+            }
+
+            setTimeout(function() {
+                deferred.notify('About to greet ' + name + '.');
+
+                if (okToGreet(name)) {
+                    deferred.resolve('Hello, ' + name + '!');
+                } else {
+                    deferred.reject('Greeting ' + name + ' is not allowed.');
+                }
+            }, 1000);
+
+            return deferred.promise;
+        }
+
+        var promise = asyncGreet('Robin Hood');
+        
+        promise.then(function(greeting) {
+            $log.debug('Success: ' + greeting);
+        }, function(reason) {
+            $log.error('Failed: ' + reason);
+        }, function(update) {
+            $log.debug('Got notification: ' + update);
+        });
 
     }])
         .directive("chart", ["$log", function ($log) {
