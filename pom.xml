@@ -10,12 +10,12 @@
         <cucumber.jvm>1.1.8</cucumber.jvm>
     </properties>
     <dependencies>
-        <!--<dependency>
+        <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-jvm</artifactId>
             <version>${cucumber.jvm}</version>
             <scope>test</scope>
-        </dependency>-->
+        </dependency>
         <dependency>
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-picocontainer</artifactId>
