@@ -115,6 +115,26 @@
                     </dependency>
                 </dependencies>
             </plugin>
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>yuicompressor-maven-plugin</artifactId>
+                <version>1.4.0</version>
+                <configuration>
+                    <includes>
+                        <include>src/main/webapp/js/app</include>
+                    </includes>
+                    <outputDirectory>target</outputDirectory>
+                    <gzip>true</gzip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>compress</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
