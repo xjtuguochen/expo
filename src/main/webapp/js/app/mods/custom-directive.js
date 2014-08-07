@@ -3,11 +3,12 @@
     angular.module("expo", []).controller("TestController", ['$q', "$scope", "$interval", "$log", function ($q, $scope, $interval, $log) {
         function asyncGreet(name) {
             var deferred = $q.defer();
+
             function okToGreet() {
                 return true;
             }
 
-            setTimeout(function() {
+            setTimeout(function () {
                 deferred.notify('About to greet ' + name + '.');
 
                 if (okToGreet(name)) {
@@ -21,12 +22,12 @@
         }
 
         var promise = asyncGreet('Robin Hood');
-        
-        promise.then(function(greeting) {
+
+        promise.then(function (greeting) {
             $log.debug('Success: ' + greeting);
-        }, function(reason) {
+        }, function (reason) {
             $log.error('Failed: ' + reason);
-        }, function(update) {
+        }, function (update) {
             $log.debug('Got notification: ' + update);
         });
 
@@ -53,4 +54,16 @@
         return this.type;
     };
 
+})();
+
+(function(){
+    'use strict';
+    angular.module("expo").controller("SelectorController", function ($log, $scope) {
+        $scope.valueDate = "20140721";
+
+        $scope.$watch("valueDate", function (newValue) {
+            $log.debug("Value date new value is " + newValue);
+        })
+
+    })
 })();

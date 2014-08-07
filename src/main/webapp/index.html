@@ -14,6 +14,15 @@
         <chart id="detailChart" chart-data="detail"></chart>
         <chart id="overviewChart" chart-data="overview"></chart>
     </div>
+
+    <div ng-controller="SelectorController">
+        <div id="valueDateSelector">
+            <select ng-model="valueDate">
+                <option value="20140720">20140720</option>
+                <option value="20140721">20140721</option>
+            </select>
+        </div>
+    </div>
 </div>
 </body>
 </html>
