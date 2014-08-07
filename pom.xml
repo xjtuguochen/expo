@@ -4,7 +4,7 @@
     <groupId>com.sgproperty</groupId>
     <artifactId>sgproperty</artifactId>
     <packaging>pom</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>0.0.1-SNAPSHOT</version>
     <name>sgproperty</name>
     <properties>
         <cucumber.jvm>1.1.8</cucumber.jvm>
@@ -15,6 +15,7 @@
     <modules>
         <module>sgproperty-database</module>
         <module>sgproperty-service</module>
+        <module>sgproperty-webapp</module>
     </modules>
     <dependencyManagement>
         <dependencies>

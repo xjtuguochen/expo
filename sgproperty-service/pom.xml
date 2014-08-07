@@ -3,14 +3,13 @@
     <parent>
         <groupId>com.sgproperty</groupId>
         <artifactId>sgproperty</artifactId>
-        <version>1.0-SNAPSHOT</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
-    <groupId>com.sgproperty</groupId>
-    <artifactId>service</artifactId>
-    <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>sgproperty-service</artifactId>
+    <packaging>jar</packaging>
+    <version>0.0.1-SNAPSHOT</version>
     <name>sgproperty-service</name>
 
     <dependencies>
