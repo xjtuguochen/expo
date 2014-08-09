@@ -14,9 +14,15 @@
     <version>0.0.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
+    <dependencies>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+    </dependencies>
+
     <build>
         <finalName>sgproperty-database</finalName>
-        <testSourceDirectory>src/test/java</testSourceDirectory>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -46,8 +52,9 @@
                             <goal>migrate</goal>
                         </goals>
                         <configuration>
-                            <url>jdbc:h2:file:target/foobar</url>
-                            <user>sa</user>
+                            <url>${jdbc.url}</url>
+                            <user>${jdbc.user}</user>
+                            <password>${jdbc.password}</password>
                         </configuration>
                     </execution>
 
@@ -58,8 +65,9 @@
                             <goal>clean</goal>
                         </goals>
                         <configuration>
-                            <url>jdbc:h2:file:target/foobar</url>
-                            <user>sa</user>
+                            <url>${jdbc.url}</url>
+                            <user>${jdbc.user}</user>
+                            <password>${jdbc.password}</password>
                         </configuration>
                     </execution>
                 </executions>
@@ -73,4 +81,50 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>localhost</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <jdbc.url>jdbc:mysql://localhost:3306/sgproperty</jdbc.url>
+                <jdbc.user>sgproperty</jdbc.user>
+                <jdbc.password>820913</jdbc.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>CI</id>
+            <properties>
+                <jdbc.url>jdbc:mysql://localhost:3306/sgproperty</jdbc.url>
+                <jdbc.user>sgproperty</jdbc.user>
+                <jdbc.password>820913</jdbc.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>SIT</id>
+            <properties>
+                <jdbc.url>jdbc:mysql://localhost:3306/sgproperty</jdbc.url>
+                <jdbc.user>sgproperty</jdbc.user>
+                <jdbc.password>820913</jdbc.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>UAT</id>
+            <properties>
+                <jdbc.url>jdbc:mysql://localhost:3306/sgproperty</jdbc.url>
+                <jdbc.user>sgproperty</jdbc.user>
+                <jdbc.password>820913</jdbc.password>
+            </properties>
+        </profile>
+        <profile>
+            <id>PROD</id>
+            <properties>
+                <jdbc.url>jdbc:mysql://localhost:3306/sgproperty</jdbc.url>
+                <jdbc.user>sgproperty</jdbc.user>
+                <jdbc.password>820913</jdbc.password>
+            </properties>
+        </profile>
+    </profiles>
 </project>
