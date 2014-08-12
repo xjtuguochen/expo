@@ -11,11 +11,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <junit.version>4.11</junit.version>
         <spring.version>4.0.6.RELEASE</spring.version>
+        <vertx.version>2.1.2</vertx.version>
     </properties>
     <modules>
         <module>sgproperty-database</module>
         <module>sgproperty-service</module>
         <module>sgproperty-webapp</module>
+        <module>sgproperty-gladiator</module>
     </modules>
     <dependencyManagement>
         <dependencies>
@@ -23,6 +25,18 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-core</artifactId>
+                <version>${vertx.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>io.vertx</groupId>
+                <artifactId>vertx-platform</artifactId>
+                <version>${vertx.version}</version>
             </dependency>
 
             <dependency>
