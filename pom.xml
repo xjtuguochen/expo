@@ -12,6 +12,7 @@
         <junit.version>4.11</junit.version>
         <spring.version>4.0.6.RELEASE</spring.version>
         <vertx.version>2.1.2</vertx.version>
+        <logback.version>1.1.2</logback.version>
     </properties>
     <modules>
         <module>sgproperty-database</module>
@@ -22,10 +23,24 @@
     <dependencyManagement>
         <dependencies>
             <dependency>
+                <groupId>javassist</groupId>
+                <artifactId>javassist</artifactId>
+                <version>3.12.1.GA</version>
+            </dependency>
+
+
+            <dependency>
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
                 <version>${spring.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+
 
             <dependency>
                 <groupId>io.vertx</groupId>
